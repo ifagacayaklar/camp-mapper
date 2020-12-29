@@ -1,2 +1,2 @@
 # camp-mapper
-Web Developer Bootcamp Final Project v1.2.1
+Web Developer Bootcamp Final Project v1.3
