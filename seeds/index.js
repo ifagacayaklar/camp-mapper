@@ -27,9 +27,26 @@ const seedDB = async () => {
             author: "5feb1fb9de314702f994914b",
             location:`${cities[random1000].city}, ${cities[random1000].state}`,
             title : `${sample(descriptors)} ${sample(places)}`,
-            image: 'https://source.unsplash.com/collection/483251',
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            price: price
+            price: price,
+            images:  [ 
+                { 
+                    "url" : "https://res.cloudinary.com/ifagacayaklar/image/upload/v1609631475/CampMapper/umwsbs5rr3ceewln3p3q.jpg", 
+                    "filename" : "CampMapper/umwsbs5rr3ceewln3p3q" 
+                }, 
+                { 
+                    "url" : "https://res.cloudinary.com/ifagacayaklar/image/upload/v1609631486/CampMapper/jqpurocipghxvfqt5itt.jpg", 
+                    "filename" : "CampMapper/jqpurocipghxvfqt5itt" 
+                }, 
+                { 
+                    "url" : "https://res.cloudinary.com/ifagacayaklar/image/upload/v1609631490/CampMapper/a925m3uwtcgdi5pqeydl.jpg", 
+                    "filename" : "CampMapper/a925m3uwtcgdi5pqeydl" 
+                }, 
+                { 
+                    "url" : "https://res.cloudinary.com/ifagacayaklar/image/upload/v1609631493/CampMapper/ahiciexbdycqudpzmkza.jpg", 
+                "filename" : "CampMapper/ahiciexbdycqudpzmkza" 
+                }
+            ]
         });
         await camp.save();
     }

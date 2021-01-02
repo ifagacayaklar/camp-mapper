@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== "production"){
+    require('dotenv').config();
+}
+
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
@@ -8,7 +12,8 @@ const allRoutes = require('./routes/index');
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const User = require('./models/user')
+const User = require('./models/user');
+
 
 mongoose.set('useFindAndModify', false);
 mongoose.connect('mongodb://localhost:27017/camp-mapper', {
@@ -60,6 +65,13 @@ app.use((req, res, next) => {
 })
 
 app.use('/', allRoutes)
+
+app.use((err, req, res, next) => {
+    console.log(err)
+    const {message, statusCode = 500} = err;
+    if (!err.message) err.message = 'Oh No, Something went Wrong!'
+    res.status(statusCode).render('error', {err});
+})
 
 app.listen(port, ()=> {
     console.log(`Serving on port ${port}`)
