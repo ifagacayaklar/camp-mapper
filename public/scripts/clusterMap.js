@@ -1,4 +1,3 @@
-
 mapboxgl.accessToken = mapToken
 var map = new mapboxgl.Map({
 container: 'clusterMap',
@@ -6,6 +5,8 @@ style: 'mapbox://styles/mapbox/light-v10',
 center: [-103.59179687498357, 40.66995747013945],
 zoom: 3
 });
+
+map.addControl(new mapboxgl.NavigationControl());
 
 campgrounds = {
     features: campgrounds.map((c) => {
@@ -50,11 +51,11 @@ paint: {
 'circle-color': [
 'step',
 ['get', 'point_count'],
-'#0097A7',
+'#00ACC1',
 30,
-'#43A047',
+'#00897B',
 60,
-'#FFB300'
+'#43A047'
 ],
 'circle-radius': [
 'step',
@@ -86,8 +87,8 @@ type: 'circle',
 source: 'campgrounds',
 filter: ['!', ['has', 'point_count']],
 paint: {
-'circle-color': '#1E88E5',
-'circle-radius': 4,
+'circle-color': '#2196F3',
+'circle-radius': 6,
 'circle-stroke-width': 1,
 'circle-stroke-color': '#fff'
 }
