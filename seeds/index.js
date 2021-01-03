@@ -46,7 +46,8 @@ const seedDB = async () => {
                     "url" : "https://res.cloudinary.com/ifagacayaklar/image/upload/v1609631493/CampMapper/ahiciexbdycqudpzmkza.jpg", 
                 "filename" : "CampMapper/ahiciexbdycqudpzmkza" 
                 }
-            ]
+            ],
+            geometry : { type : "Point", coordinates : [ 32.48333, 37.86667 ] }
         });
         await camp.save();
     }
