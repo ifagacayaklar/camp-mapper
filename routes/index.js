@@ -20,12 +20,4 @@ router.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404));
 })
 
-router.use((err, req, res, next) => {
-    const {message, statusCode = 500} = err;
-    if (!err.message) err.message = 'Oh No, Something went Wrong!'
-    res.status(statusCode).render('error', {err});
-})
-
-
-
 module.exports = router;
