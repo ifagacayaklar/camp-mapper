@@ -20,8 +20,6 @@ campgrounds = {
         }
     }
 })}
-console.log(campgrounds)
-
  
 map.on('load', function () {
 // Add a new source from our GeoJSON data and
