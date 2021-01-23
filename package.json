@@ -1,6 +1,6 @@
 {
   "name": "camp-mapper",
-  "version": "1.0.0",
+  "version": "1.8",
   "description": "Web Developer Bootcamp Final Project based on Udemy Course by Colt Steele",
   "main": "app.js",
   "scripts": {
